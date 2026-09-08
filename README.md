@@ -22,6 +22,7 @@ This folder is the standalone Android project. Shared Protobuf contracts are rea
 | Contact sync | Sends only a contact explicitly selected in Android and requires local confirmation before import; photos are not included. |
 | Presentation mode | Provides previous/next slide controls, a remote blackout, and a synchronized timer. |
 | Drawing tablet | Transmits stylus identity, normalized position, pressure, tilt, and primary-button state. |
+| Desktop screen streaming | Starts an opt-in, low-latency receiver for a trusted computer; the first milestone targets read-only H.264 mirroring over a dedicated authenticated media stream. |
 | Shared remote folder | Exposes only a directory explicitly selected through Android's Storage Access Framework and keeps all other storage inaccessible. |
 | Notification sync | Shares authorized notifications and supports remote dismissal. |
 | Media control | Synchronizes playback state and sends media commands. |

@@ -50,7 +50,8 @@ data class FeatureSettings(
     val presentationMode: Boolean = true,
     val drawingTablet: Boolean = true,
     val remoteFiles: Boolean = true,
-    val clipboardSync: Boolean = false
+    val clipboardSync: Boolean = false,
+    val desktopScreenStreaming: Boolean = false
 ) {
     val enabledCount: Int
         get() = listOf(
@@ -69,7 +70,8 @@ data class FeatureSettings(
             presentationMode,
             drawingTablet,
             remoteFiles,
-            clipboardSync
+            clipboardSync,
+            desktopScreenStreaming
         ).count { it }
 
     val requiresSpecialAccess: Boolean
@@ -77,7 +79,7 @@ data class FeatureSettings(
             safeCommands || remoteInput
 
     companion object {
-        const val AVAILABLE_COUNT = 16
+        const val AVAILABLE_COUNT = 17
     }
 }
 
@@ -136,7 +138,8 @@ class EcosystemPreferences(context: Context) {
         presentationMode = preferences.getBoolean(KEY_FEATURE_PRESENTATION, true),
         drawingTablet = preferences.getBoolean(KEY_FEATURE_DRAWING_TABLET, true),
         remoteFiles = preferences.getBoolean(KEY_FEATURE_REMOTE_FILES, true),
-        clipboardSync = preferences.getBoolean(KEY_FEATURE_CLIPBOARD, false)
+        clipboardSync = preferences.getBoolean(KEY_FEATURE_CLIPBOARD, false),
+        desktopScreenStreaming = preferences.getBoolean(KEY_FEATURE_DESKTOP_SCREEN_STREAMING, false)
     )
 
     fun setFeatureSettings(settings: FeatureSettings) {
@@ -157,6 +160,7 @@ class EcosystemPreferences(context: Context) {
             .putBoolean(KEY_FEATURE_DRAWING_TABLET, settings.drawingTablet)
             .putBoolean(KEY_FEATURE_REMOTE_FILES, settings.remoteFiles)
             .putBoolean(KEY_FEATURE_CLIPBOARD, settings.clipboardSync)
+            .putBoolean(KEY_FEATURE_DESKTOP_SCREEN_STREAMING, settings.desktopScreenStreaming)
             .apply()
     }
 
@@ -253,6 +257,7 @@ class EcosystemPreferences(context: Context) {
         const val KEY_FEATURE_DRAWING_TABLET = "feature_drawing_tablet"
         const val KEY_FEATURE_REMOTE_FILES = "feature_remote_files"
         const val KEY_FEATURE_CLIPBOARD = "feature_clipboard"
+        const val KEY_FEATURE_DESKTOP_SCREEN_STREAMING = "feature_desktop_screen_streaming"
         const val KEY_TRUSTED_DEVICE_NAMES = "trusted_device_names"
         const val SUFFIX_NAME = "name"
         const val SUFFIX_AUTO_FILES = "auto_files"

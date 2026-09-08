@@ -119,6 +119,8 @@ object VeyroI18n {
         "Permita solicitar um alarme no aparelho conectado." to "Allow an alarm request on the connected device.",
         "Ações remotas seguras" to "Safe remote actions",
         "Controle volume e lanterna com comandos nativos." to "Control volume and flashlight with native commands.",
+        "Tela do computador" to "Computer screen",
+        "Receba a tela de um computador confiável em baixa latência." to "Receive a trusted computer's screen with low latency.",
         "Mouse e teclado remotos" to "Remote mouse and keyboard",
         "Use este aparelho como touchpad e teclado." to "Use this device as a touchpad and keyboard.",
         "Pasta remota compartilhada" to "Shared remote folder",

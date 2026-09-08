@@ -103,7 +103,8 @@ class EcosystemPreferencesInstrumentedTest {
             presentationMode = false,
             drawingTablet = true,
             remoteFiles = false,
-            clipboardSync = true
+            clipboardSync = true,
+            desktopScreenStreaming = true
         )
         try {
             preferences.setFeatureSettings(changedSettings)

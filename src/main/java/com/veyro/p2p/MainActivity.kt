@@ -1534,6 +1534,15 @@ private fun FeatureSettingsPanel(
 
             FeatureCategoryLabel("ACESSO REMOTO")
             FeatureToggleRow(
+                title = "Tela do computador",
+                detail = "Receba a tela de um computador confiável em baixa latência.",
+                checked = settings.desktopScreenStreaming,
+                icon = Icons.Default.Devices,
+                onCheckedChange = {
+                    onSettingsChange(settings.copy(desktopScreenStreaming = it))
+                }
+            )
+            FeatureToggleRow(
                 title = "Encontrar aparelho",
                 detail = "Permita solicitar um alarme no aparelho conectado.",
                 checked = settings.findDevice,

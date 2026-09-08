@@ -10,7 +10,8 @@ class FeatureSettingsTest {
         val settings = FeatureSettings()
 
         assertEquals(9, settings.enabledCount)
-        assertEquals(16, FeatureSettings.AVAILABLE_COUNT)
+        assertEquals(17, FeatureSettings.AVAILABLE_COUNT)
+        assertFalse(settings.desktopScreenStreaming)
         assertFalse(settings.clipboardSync)
         assertFalse(settings.notificationSync)
         assertFalse(settings.mediaControl)
