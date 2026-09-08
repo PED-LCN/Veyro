@@ -284,4 +284,24 @@ class VeyroProtocolCodecTest {
         assertEquals(VeyroMessage.PayloadCase.CLIPBOARD_SYNC_EVENT, decoded?.payloadCase)
         assertEquals(event, decoded?.clipboardSyncEvent)
     }
+
+    @Test
+    fun screenStreamRequest_roundTripsAsControlPlaneMessage() {
+        val request = ScreenStreamControl.newBuilder()
+            .setRequestId("6af9b6c4-7250-43f8-901f-ddb8f1cbd030")
+            .setAction(ScreenStreamAction.SCREEN_STREAM_ACTION_REQUEST)
+            .addSupportedCodecs(ScreenVideoCodec.SCREEN_VIDEO_CODEC_H264)
+            .setMaximumWidth(1920)
+            .setMaximumHeight(1080)
+            .setMaximumFramesPerSecond(60)
+            .setMaximumBitrateKbps(12_000)
+            .build()
+
+        val decoded = VeyroProtocolCodec.decodeFeatureMessage(
+            VeyroProtocolCodec.encodeScreenStreamControl(request)
+        )
+
+        assertEquals(VeyroMessage.PayloadCase.SCREEN_STREAM_CONTROL, decoded?.payloadCase)
+        assertEquals(request, decoded?.screenStreamControl)
+    }
 }

@@ -95,6 +95,13 @@ object VeyroProtocolCodec {
         .build()
         .toByteArray()
 
+    fun encodeScreenStreamControl(control: ScreenStreamControl): ByteArray =
+        VeyroMessage.newBuilder()
+            .setProtocolVersion(PROTOCOL_VERSION)
+            .setScreenStreamControl(control)
+            .build()
+            .toByteArray()
+
     fun decodeFeatureMessage(bytes: ByteArray): VeyroMessage? = runCatching {
         VeyroMessage.parseFrom(bytes)
     }.getOrNull()

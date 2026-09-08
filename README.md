@@ -4,7 +4,8 @@ Veyro is a peer-to-peer ecosystem that connects nearby devices directly, without
 
 > Current status: **Alpha 0.1.9 development**. This version adds interoperability with the Veyro Desktop transport and is intended for testing.
 
-This folder is the standalone Android project. Shared Protobuf contracts are read from `../protocol/`.
+This folder is the standalone Android project. Its byte-compatible copy of the shared
+Protobuf contracts is kept in `protocol/` and must stay synchronized with Veyro Desktop.
 
 ## Key features
 

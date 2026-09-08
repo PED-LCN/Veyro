@@ -1574,6 +1574,11 @@ internal class NearbySessionController(
                         handleClipboardSyncEvent(endpointId, featureMessage.clipboardSyncEvent)
                     }
 
+                VeyroMessage.PayloadCase.SCREEN_STREAM_CONTROL -> Unit
+
+                VeyroMessage.PayloadCase.GROUP_TOPOLOGY_EVENT,
+                VeyroMessage.PayloadCase.FILE_TRANSFER_EVENT -> Unit
+
                 VeyroMessage.PayloadCase.PAYLOAD_NOT_SET,
                 null -> Unit
             }

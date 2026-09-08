@@ -3,7 +3,7 @@
 ## Scope
 
 This repository contains the standalone Android client. Shared Protobuf contracts are
-expected at `../protocol/`; do not duplicate generated protocol classes in this project.
+kept in `protocol/` and must remain byte-compatible with the Desktop repository.
 
 ## Build and verification
 

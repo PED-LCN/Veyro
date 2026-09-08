@@ -33,7 +33,7 @@ android {
     sourceSets {
         getByName("main") {
             proto {
-                srcDir(rootProject.file("../protocol"))
+                srcDir(rootProject.file("protocol"))
             }
         }
     }
